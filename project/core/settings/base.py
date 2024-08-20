@@ -27,7 +27,9 @@ INSTALLED_APPS = [
     'apps.api',
     'frontend',
     # Modules
-    # 'rest_framework',
+    'rest_framework',
+    'drf_spectacular',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -88,3 +90,16 @@ USE_TZ = True
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# REST Settings
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Plus You API',
+    'DESCRIPTION': 'Plus You Coffee Shop APIs',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+}
