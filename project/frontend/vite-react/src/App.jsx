@@ -1,38 +1,38 @@
-import { useState } from 'react'
 import './App.css'
+import { Navigate, Route, Routes ,BrowserRouter} from 'react-router-dom'
+import React from 'react'
 import 'vite/modulepreload-polyfill'
 
-function App() {
-  const [count, setCount] = useState(0)
-    const reactLogo = "/static/assets/react.svg"
-    const djangoLogo = "/static/assets/django.svg"
-    const viteLogo = "/static/vite.svg"
 
+import CoffeeShop from './Components/CoffeeShop'
+import Layout from './Layout/Layout'
+import AboutUs from './Pages/AboutUs'
+import Introduction from './Pages/introduction'
+import Rules from './Pages/Rules'
+import Complaint from './Pages/Complaint'
+
+function App() {
+  
+  React.useEffect(() => {
+    document.documentElement.setAttribute('lang', 'fa');
+    document.documentElement.setAttribute('dir', 'rtl');
+  }, []);
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-        <a href="https://djangoproject.com/" target="_blank">
-          <img src={djangoLogo} className="logo django" alt="Django logo" />
-        </a>
-      </div>
-      <h1>Vite + React + Django</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite, React and Django logos to learn more
-      </p>
+    <> 
+    
+      <BrowserRouter>
+      <Layout>
+      
+      <Routes>
+      <Route index element={<Navigate to="/menu" replace />} />
+      <Route path='/menu' element={<CoffeeShop />} />
+      <Route path='/aboutUs' element={<AboutUs />} />
+      <Route path='/introduction' element={<Introduction />} />
+      <Route path='/rules' element={<Rules />} />
+      <Route path='/complaint' element={<Complaint />}/>
+      </Routes>
+      </Layout>
+      </BrowserRouter>
     </>
   )
 }
