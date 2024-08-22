@@ -1,0 +1,46 @@
+.container{
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    background-color: #c4dce0;
+    height: 150px;
+    width: 350px;
+    align-items: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin: 10px 0px;
+    padding:  10px;
+}
+img {
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.inf span {
+    position: absolute;
+    background-color: rgb(5, 136, 112);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 30px;
+    font-size: 15px;
+    margin-top: 10px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+.inf {
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+
+

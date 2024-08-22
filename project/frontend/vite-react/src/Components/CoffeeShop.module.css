@@ -1,4 +1,19 @@
-div{
+.category{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+.container {
+    height: 120vh;
+}
+.products{
+    display: flex;
+    background-color: #f7fbfc;
+    height: auto;
+    padding: 0px 30px;
+    margin: 10px auto;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
 }

@@ -1,42 +1,43 @@
-/* header{
-    height: 50px;
-    top: 0;
-    width: 100%;
-    display: flex;
-    background-color: #c7eaca;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-}
-.navAndSearch{
-    display: flex;
-} */
-/* ------------ */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* فضای بین آیتم‌ها */
-    padding: 10px 20px;
-    background-color: #f5f5f5;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #5f695f;
+  height: 9vh;
+}
+ 
+.navAndSearch {
+  display: flex;
+  align-items: center; 
+}
   
-  .navAndSearch {
-    display: flex;
-    align-items: center; /* هم‌تراز کردن Navbar و دکمه در یک خط افقی */
-  }
+.searchButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 10px; 
+}
   
-  .searchButton {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    margin-left: 10px; /* فاصله بین Navbar و آیکون سرچ */
-  }
-  
-  .title {
-    margin: 0;
-    text-align: center;
-    flex-grow: 1; /* اشغال فضای موجود برای قرارگیری در مرکز */
-    font-size: 24px;
-  }
+.title {
+  margin: 0;
+  text-align: center;
+  flex-grow: 1; /* اشغال فضای موجود برای قرارگیری در مرکز */
+  font-size: 24px;
+}
+
+.footer{
+  display:flex;
+  width: 100%;
+  height: 20vh;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  border-top: 1px solid #5f695f;
+  justify-content: center;
+  align-items: center;
+  color:#000000;
+}
   
