@@ -27,7 +27,7 @@ class SiteSettings(models.Model):
         super(SiteSettings, self).save(*args, **kwargs)
 
     def __str__(self):
-        return f'{self.name} | {self.email}'
+        return f'{self.title} | {self.email}'
 
 
 class Category(models.Model):
@@ -35,6 +35,8 @@ class Category(models.Model):
                              help_text=_('Enter menu category title in Persian here'))
     en_title = models.CharField(_('English Title'), max_length=64, null=True, blank=True,
                                 help_text=_('Enter menu category title in English here (Optional)'))
+    icon = models.ImageField(_('Icon'), upload_to='images/category', default='images/category/default.jpg', null=True,
+                             blank=True)
     is_active = models.BooleanField(_('Active / Disable'), default=True)
 
     class Meta:
