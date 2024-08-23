@@ -9,9 +9,16 @@ class SiteSettings(models.Model):
     logo = models.ImageField(_('Logo'), upload_to='images/site_profile/logo',
                              default='images/site_profile/logo.png', null=True, blank=True)
     email = models.EmailField(_('Email'), max_length=128)
-    phone = models.CharField(_('Phone'), max_length=32)
+    phone = models.CharField(_('Phone'), max_length=32, help_text=_('Example: +98913xxxxxxx'))
+    telegram = models.CharField(_('Telegram ID'), max_length=256, help_text=_('Please enter the ID without @'),
+                                null=True, blank=True)
+    instagram = models.CharField(_('Instagram ID'), max_length=256, help_text=_('Please enter the ID without @'),
+                                 null=True, blank=True)
     address = models.CharField(_('Address'), max_length=1024)
+    latitude = models.FloatField(_('Latitude'), default=32.7024361)
+    longitude = models.FloatField(_('Longitude'), default=51.6777003)
     about = RichTextField(_('About Us'))
+    opening_closing = models.TextField(_('Opening and Closing Time'))
     is_active = models.BooleanField(_('Active / Disable'), help_text=_(
         'Warning: You can only have one site setting active. ' +
         'Only check this if you want the previous setting disabled.'), default=False)
