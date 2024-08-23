@@ -1,0 +1,24 @@
+.card {
+    position: relative;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #08001bb7;
+    background-color: #daf4f5;
+    height: 170px;
+    width: 150px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin: 20px;
+    flex: 0 1 auto; 
+    flex-shrink:inherit;
+    flex-grow: 25px;
+}
+.card:hover{
+    border: 1px solid gold;
+    box-shadow:  rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;;
+}

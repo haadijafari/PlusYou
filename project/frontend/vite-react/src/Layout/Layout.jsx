@@ -12,7 +12,7 @@ function Layout({children}) {
       <h3 className={styles.title}>Plus You</h3>
     </header>
       {children}
-      <footer>
+      <footer className={styles.footer}>
         <p>footer</p>
       </footer>
     </div>
