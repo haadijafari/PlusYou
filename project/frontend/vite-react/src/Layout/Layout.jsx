@@ -1,4 +1,3 @@
-import { IoMdSearch } from "react-icons/io";
 import styles from "./Layout.module.css"
 import Navbar from '../Components/Navbar'
 function Layout({children}) {

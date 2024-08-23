@@ -64,7 +64,7 @@ function CoffeeShop() {
      
     
   return (
-    <>
+    <div className={styles.cofee}>
     <div>
       <button className={styles.searchButton} onClick={searchHandler}><IoMdSearch /></button>
       <input type="text" placeholder="جستجو کنید ..." value={search} onChange={e => setSearch(e.target.value.toLocaleLowerCase().trim())} />
@@ -80,7 +80,7 @@ function CoffeeShop() {
         {displayed.map(p=> <div key={p.id}><Product data={p} /></div>)}
       </div>
     </div>
-    </>
+    </div>
   )
 }
 
