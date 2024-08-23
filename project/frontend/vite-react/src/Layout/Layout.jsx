@@ -7,7 +7,6 @@ function Layout({children}) {
       <header className={styles.header}>
       <div className={styles.navAndSearch}>
         <Navbar />
-        <button className={styles.searchButton}><IoMdSearch /></button>
       </div>
       <h3 className={styles.title}>Plus You</h3>
     </header>

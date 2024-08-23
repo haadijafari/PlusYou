@@ -1,13 +1,33 @@
 import { useState ,useEffect } from "react"
-import api from "../services/config";
+
+import styles from "./CoffeeShop.module.css"
+import { IoMdSearch } from "react-icons/io";
+
 import Product from './Product';
 import Category from "./Category";
-import styles from "./CoffeeShop.module.css"
 import Loader from "./Loader";
+
+import api from "../services/config";
+import { filterProducts, searchProducts } from "../helper/helper";
+
 function CoffeeShop() {
 
     const [ category , setCategory ] = useState([])
     const [ products , setProducts ] = useState([])
+    const [ search , setSearch ] = useState([])
+    const [ displayed , setDisplayed ] =useState([])
+    const [ query , setQuery ] = useState({})
+
+    useEffect(()=>{
+      setDisplayed(products)
+    },[products])
+
+    useEffect(()=>{
+      console.log(query);
+      let finalProducts = searchProducts(products , query.search)
+      finalProducts = filterProducts(finalProducts , query.category)
+      setDisplayed(finalProducts)
+    },[query])
 
     useEffect(() => {
         const fetchCagtegory = async () => {
@@ -20,6 +40,7 @@ function CoffeeShop() {
         };
         fetchCagtegory();
       }, []);
+
       useEffect(() => {
         const fetchProducts = async () => {
           try {
@@ -32,22 +53,34 @@ function CoffeeShop() {
         fetchProducts();
       }, []);
 
+      const searchHandler = ()=>{
+        setQuery((query)=> ({...query, search}))
+      }
+      
       const CategoryHandler = (event)=>{
-        const { tagName } = event.target;
         const category = event.target.innerText.toLowerCase()
-        console.log(category);
-    }
+        setQuery((query)=> ({ ...query, category }))
+      }
+     
+    
   return (
+    <>
+    <div>
+      <button className={styles.searchButton} onClick={searchHandler}><IoMdSearch /></button>
+      <input type="text" placeholder="جستجو کنید ..." value={search} onChange={e => setSearch(e.target.value.toLocaleLowerCase().trim())} />
+    </div>
     <div className={styles.container}>
-      {!products.length && <Loader />}
+      {!displayed.length && <Loader />}
       <div className={styles.category}>
         {category.map((item)=> 
-        <div key={item.id} onClick={CategoryHandler}><Category data={item}/></div>)}
+        <div key={item.id}  onClick={CategoryHandler}><Category data={item}/></div>)}
+        
       </div>
       <div className={styles.products}>
-        {products.map(p=> <div key={p.id}><Product data={p} /></div>)}
+        {displayed.map(p=> <div key={p.id}><Product data={p} /></div>)}
       </div>
     </div>
+    </>
   )
 }
 
