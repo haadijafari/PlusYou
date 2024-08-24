@@ -11,7 +11,7 @@ function introduction() {
   const [ inf , setInf ] = useState([])
 
   useEffect(() => {
-    const fetchCagtegory = async () => {
+    const fetchInformation = async () => {
       try {
         const data = await api.get("/get-site-settings");
         setInf(data);  
@@ -19,7 +19,7 @@ function introduction() {
         console.log(error.message);
       }
     };
-    fetchCagtegory();
+    fetchInformation();
   }, []);
   return (
     <div className={styles.container}>

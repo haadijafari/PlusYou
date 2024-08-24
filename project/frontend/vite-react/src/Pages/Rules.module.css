@@ -1,0 +1,17 @@
+.rules{
+    display: flex;
+    margin: 20px;
+    
+}
+.category{
+    display: flex;
+    background-color: rgba(200, 221, 221, 0.84);
+    flex-wrap: wrap;
+
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
