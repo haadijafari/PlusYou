@@ -21,7 +21,7 @@
   right: -300px; 
   width: 300px;
   height: 100%;
-  background-color: #abcecf;
+  background-color: #e1efef;
   color:rgba(206, 4, 4, 0.982);
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
   transition: right 0.3s ease; 
@@ -55,7 +55,7 @@ ul li {
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.308);
-  padding: 20px 0;
+  padding: 40px 0;
 }
   
 ul li a {

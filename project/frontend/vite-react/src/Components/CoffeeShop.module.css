@@ -1,23 +1,35 @@
-.category{
+
+.rules{
     display: flex;
-    justify-content: space-around;
-    overflow-x: scroll;
-    scrollbar-width: none;
+    margin: 20px;
+    
 }
-.cofee{
-    min-height: 100vh;
-    max-height: auto;
-}
-.container {
-    height: 120vh;
-}
-.products{
+.categoryMenu{
     display: flex;
     background-color: #f7fbfc;
-    height: auto;
-    padding: 30px 30px;
-    margin: 10px auto;
     flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-between;
+
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.categoryBox{
+    scrollbar-width: none; 
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+    background-color: beige;
+}
+.categoryItem {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 auto; 
+    flex-shrink:inherit;
+    flex-grow: 25px;
 }

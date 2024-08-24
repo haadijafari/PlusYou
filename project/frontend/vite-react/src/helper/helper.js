@@ -1,14 +1,26 @@
 
-const searchProducts = ( products , search)=>{
-    if (!search ) return products
-    const searchedProducts = products.filter((p)=> p.title.toLowerCase().includes(search))
-    return searchedProducts
-}
 
-const filterProducts = ( products, category ) =>{
-    if(!category) return products
-    const filteredProducts = products.filter(p => p.category == category)
-    return filteredProducts 
-}
+const searchProducts = (products, search) => {
+    if (!search) return products;
+  
+    const searchedProducts = {};
+  
+    
+    Object.keys(products).forEach((categoryId) => {
+      const filteredItems = products[categoryId].filter((item) =>
+        item.title.toLowerCase().includes(search)
+      );
+      
+      
+      if (filteredItems.length > 0) {
+        searchedProducts[categoryId] = filteredItems;
+      }
+    });
+  
+    return searchedProducts;
+  };
+  
 
-export { searchProducts, filterProducts }
+
+
+export { searchProducts }

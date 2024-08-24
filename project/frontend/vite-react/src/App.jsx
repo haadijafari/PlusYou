@@ -27,8 +27,8 @@ function App() {
       <Route path='/menu' element={<CoffeeShop />} />
       <Route path='/aboutUs' element={<AboutUs />} />
       <Route path='/introduction' element={<Introduction />} />
-      <Route path='/rules' element={<Rules />} />
-      <Route path='/complaint' element={<Complaint />}/>
+      {/* <Route path='/rules' element={<Rules />} /> */}
+      {/* <Route path='/complaint' element={<Complaint />}/> */}
       </Routes>
       </Layout>
       </BrowserRouter>

@@ -37,8 +37,8 @@ const SideDrawer = () => {
           <li><MdInfoOutline className={styles.icon}/><Link to="./aboutUs" onClick={toggleDrawer}>درباره ما</Link></li>
           <li><CiShare2 className={styles.icon}/><Link to="./introduction" onClick={toggleDrawer}>معرفی به دوستان</Link></li>
           <li><AiOutlineAppstore className={styles.icon}/><Link to="./menu" onClick={toggleDrawer}>مشاهده منو</Link></li>
-          <li><IoBookOutline className={styles.icon}/><Link to="/rules" onClick={toggleDrawer}>قوانین و مقررات</Link></li>
-          <li><PiSpeakerHighBold className={styles.icon}/><Link to="./complaint" onClick={toggleDrawer}>ثبت شکایت</Link></li>
+          {/* <li><IoBookOutline className={styles.icon}/><Link to="/rules" onClick={toggleDrawer}>قوانین و مقررات</Link></li> */}
+          {/* <li><PiSpeakerHighBold className={styles.icon}/><Link to="./complaint" onClick={toggleDrawer}>ثبت شکایت</Link></li> */}
         </ul>
       </div>
     </div>

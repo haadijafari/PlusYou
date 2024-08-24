@@ -1,87 +1,161 @@
-import { useState ,useEffect } from "react"
-
-import styles from "./CoffeeShop.module.css"
-import { IoMdSearch } from "react-icons/io";
-
-import Product from './Product';
-import Category from "./Category";
-import Loader from "./Loader";
-
+import { useState, useEffect, useRef } from "react";
 import api from "../services/config";
-import { filterProducts, searchProducts } from "../helper/helper";
+import styles from "./CoffeeShop.module.css";
+import Loader from "../Components/Loader";
+import { IoMdSearch } from "react-icons/io";
+import { searchProducts } from "../helper/helper";
 
-function CoffeeShop() {
+function Rules() {
+  const [categories, setCategories] = useState([]); 
+  const [categoryItems, setCategoryItems] = useState({}); 
+  const categoryRefs = useRef({}); 
+  const [isLoading, setIsLoading] = useState(true);
 
-    const [ category , setCategory ] = useState([])
-    const [ products , setProducts ] = useState([])
-    const [ search , setSearch ] = useState([])
-    const [ displayed , setDisplayed ] =useState([])
-    const [ query , setQuery ] = useState({})
+  const [search, setSearch] = useState(""); 
+  const [searchResults, setSearchResults] = useState([]); 
+  const [hasSearched, setHasSearched] = useState(false); 
 
-    useEffect(()=>{
-      setDisplayed(products)
-    },[products])
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        setIsLoading(true);
+        const response = await api.get("/get-categories");
+        const categoriesData = response || [];
+        setCategories(categoriesData);
 
-    useEffect(()=>{
-      console.log(query);
-      let finalProducts = searchProducts(products , query.search)
-      finalProducts = filterProducts(finalProducts , query.category)
-      setDisplayed(finalProducts)
-    },[query])
+        const itemsResponses = await Promise.all(
+          categoriesData.map(async (category) => {
+            const itemsResponse = await api.get(`/get-categories/${category.id}`);
+            return {
+              id: category.id,
+              items: itemsResponse.results.menu_items || [],
+            };
+          })
+        );
 
-    useEffect(() => {
-        const fetchCagtegory = async () => {
-          try {
-            const data = await api.get("/get-categories");
-            setCategory(data);  
-          } catch (error) {
-            console.log(error.message);
-          }
-        };
-        fetchCagtegory();
-      }, []);
-
-      useEffect(() => {
-        const fetchProducts = async () => {
-          try {
-            const data = await api.get("/get-items");
-            setProducts(data.results);  
-          } catch (error) {
-            console.log(error.message);
-          }
-        };
-        fetchProducts();
-      }, []);
-
-      const searchHandler = ()=>{
-        setQuery((query)=> ({...query, search}))
+        const itemsMap = itemsResponses.reduce((acc, curr) => {
+          acc[curr.id] = curr.items;
+          return acc;
+        }, {});
+        setCategoryItems(itemsMap);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching categories and items:", error.message);
       }
-      
-      const CategoryHandler = (event)=>{
-        const category = event.target.innerText.toLowerCase()
-        setQuery((query)=> ({ ...query, category }))
-      }
-     
+    };
+    fetchCategories();
+  }, []);
+
+  
+  const searchHandler = () => {
+    setHasSearched(true);  
+    const finalProducts = searchProducts(categoryItems, search);
     
+    
+    const results = [];
+    Object.keys(finalProducts).forEach(categoryId => {
+      finalProducts[categoryId].forEach(item => {
+        results.push(item);
+      });
+    });
+    
+    setSearchResults(results);  
+  };
+
+  const handleCategoryClick = (id) => {
+    if (categoryRefs.current[id]) {
+      categoryRefs.current[id].scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className={styles.cofee}>
     <div>
-      <button className={styles.searchButton} onClick={searchHandler}><IoMdSearch /></button>
-      <input type="text" placeholder="جستجو کنید ..." value={search} onChange={e => setSearch(e.target.value.toLocaleLowerCase().trim())} />
-    </div>
-    <div className={styles.container}>
-      {!displayed.length && <Loader />}
-      <div className={styles.category}>
-        {category.map((item)=> 
-        <div key={item.id}  onClick={CategoryHandler}><Category data={item}/></div>)}
+      {isLoading && <Loader />}
+      <div>
+        <button className={styles.searchButton} onClick={searchHandler}><IoMdSearch /></button>
+        <input
+          type="text"
+          placeholder="جستجو کنید ..."
+          value={search}
+          onChange={e => setSearch(e.target.value.toLocaleLowerCase().trim())}  
+        />
+      </div>
+      
+      <div className={styles.categoryBox}>
+        {categories.map((category) => (
+          <div
+            key={category.id}
+            className={styles.categoryItem}
+            onClick={() => handleCategoryClick(category.id)}
+          >
+            {category.title}
+          </div>
+        ))}
+      </div>
+      
+      <div>
+        {hasSearched && searchResults.length > 0 && (
+          <div>       
+            {searchResults.map(item => (
+              <div key={item.id} className={styles.rules}>
+                <div className="card mb-8 rounded-5" style={{ maxWidth: 'auto', minWidth:'340px', maxHeight:'auto', minHeight:"180px", marginTop:"10px" }}>
+                  <div className="row g-0" style={{display:"flex", alignItems:"center", padding:"10px"}}>
+                    <div className="col-md-4">
+                      <img src={item.img} alt={item.title} style={{ width: '100px' }} />
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h5 className="card-title">{item.title}</h5>
+                        <p className="card-text"><small className="tex-body-secondary">{item.short_description}</small></p>
+                        <p className="card-text"><small className="tex-body-secondary">{item.price} تومان </small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
         
-      </div>
-      <div className={styles.products}>
-        {displayed.map(p=> <div key={p.id}><Product data={p} /></div>)}
+        
+        {hasSearched && searchResults.length === 0 && (
+          <p>محصولی یافت نشد</p>
+        )}
+        
+        {categories.map((category) => (
+          <div
+            key={category.id}
+            ref={(el) => (categoryRefs.current[category.id] = el)}
+            style={{ marginBottom: '20px', padding: '10px' }}
+          >
+            <h2 className={styles.title}>{category.title}</h2>
+            <div>
+              <div className={styles.categoryMenu}>
+                {(!hasSearched || searchResults.length > 0) && categoryItems[category.id]?.map((item) => (
+                  <div key={item.id} className={styles.rules}>
+                    <div className="card mb-8 rounded-5" style={{ maxWidth: 'auto', minWidth:'340px', maxHeight:'auto', minHeight:"180px", marginTop:"10px" }}>
+                      <div className="row g-0" style={{display:"flex", alignItems:"center", padding:"10px"}}>
+                        <div className="col-md-4">
+                          <img src={item.img} alt={item.title} style={{ width: '100px' }} />
+                        </div>
+                        <div className="col-md-8">
+                          <div className="card-body">
+                            <h5 className="card-title">{item.title}</h5>
+                            <p className="card-text"><small className="tex-body-secondary">{item.short_description}</small></p>
+                            <p className="card-text"><small className="tex-body-secondary">{item.price} تومان </small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )) || <p>محصولی یافت نشد</p>}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default CoffeeShop
+export default Rules;
