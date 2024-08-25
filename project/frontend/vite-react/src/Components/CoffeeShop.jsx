@@ -1,9 +1,11 @@
+
 import { useState, useEffect, useRef } from "react";
 import api from "../services/config";
 import styles from "./CoffeeShop.module.css";
 import Loader from "../Components/Loader";
 import { IoMdSearch } from "react-icons/io";
 import { searchProducts } from "../helper/helper";
+import Card from "./Card";
 
 function Rules() {
   const [categories, setCategories] = useState([]); 
@@ -46,11 +48,14 @@ function Rules() {
     fetchCategories();
   }, []);
 
-  
   const searchHandler = () => {
+    if (!search.trim()) {
+      setHasSearched(false);
+      return;
+    }
+    
     setHasSearched(true);  
     const finalProducts = searchProducts(categoryItems, search);
-    
     
     const results = [];
     Object.keys(finalProducts).forEach(categoryId => {
@@ -71,12 +76,13 @@ function Rules() {
   return (
     <div>
       {isLoading && <Loader />}
-      <div>
+      <div className={styles.search}>
         <button className={styles.searchButton} onClick={searchHandler}><IoMdSearch /></button>
         <input
           type="text"
           placeholder="جستجو کنید ..."
           value={search}
+          className={styles.searchInput}
           onChange={e => setSearch(e.target.value.toLocaleLowerCase().trim())}  
         />
       </div>
@@ -97,26 +103,10 @@ function Rules() {
         {hasSearched && searchResults.length > 0 && (
           <div>       
             {searchResults.map(item => (
-              <div key={item.id} className={styles.rules}>
-                <div className="card mb-8 rounded-5" style={{ maxWidth: 'auto', minWidth:'340px', maxHeight:'auto', minHeight:"180px", marginTop:"10px" }}>
-                  <div className="row g-0" style={{display:"flex", alignItems:"center", padding:"10px"}}>
-                    <div className="col-md-4">
-                      <img src={item.img} alt={item.title} style={{ width: '100px' }} />
-                    </div>
-                    <div className="col-md-8">
-                      <div className="card-body">
-                        <h5 className="card-title">{item.title}</h5>
-                        <p className="card-text"><small className="tex-body-secondary">{item.short_description}</small></p>
-                        <p className="card-text"><small className="tex-body-secondary">{item.price} تومان </small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div key={item.id}><Card data={item}/></div>
             ))}
           </div>
         )}
-        
         
         {hasSearched && searchResults.length === 0 && (
           <p>محصولی یافت نشد</p>
@@ -132,22 +122,7 @@ function Rules() {
             <div>
               <div className={styles.categoryMenu}>
                 {(!hasSearched || searchResults.length > 0) && categoryItems[category.id]?.map((item) => (
-                  <div key={item.id} className={styles.rules}>
-                    <div className="card mb-8 rounded-5" style={{ maxWidth: 'auto', minWidth:'340px', maxHeight:'auto', minHeight:"180px", marginTop:"10px" }}>
-                      <div className="row g-0" style={{display:"flex", alignItems:"center", padding:"10px"}}>
-                        <div className="col-md-4">
-                          <img src={item.img} alt={item.title} style={{ width: '100px' }} />
-                        </div>
-                        <div className="col-md-8">
-                          <div className="card-body">
-                            <h5 className="card-title">{item.title}</h5>
-                            <p className="card-text"><small className="tex-body-secondary">{item.short_description}</small></p>
-                            <p className="card-text"><small className="tex-body-secondary">{item.price} تومان </small></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    <div key={item.id}><Card  data={item}/></div>
                 )) || <p>محصولی یافت نشد</p>}
               </div>
             </div>

@@ -8,8 +8,8 @@ import CoffeeShop from './Components/CoffeeShop'
 import Layout from './Layout/Layout'
 import AboutUs from './Pages/AboutUs'
 import Introduction from './Pages/Introduction'
-import Rules from './Pages/Rules'
-import Complaint from './Pages/Complaint'
+// import Rules from './Pages/Rules'
+// import Complaint from './Pages/Complaint'
 
 function App() {
   

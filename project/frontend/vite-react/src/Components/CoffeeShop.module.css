@@ -16,20 +16,80 @@
     align-items: center;
     margin-bottom: 30px;
 }
-.categoryBox{
-    scrollbar-width: none; 
+
+.categoryBox {
     display: flex;
-    justify-content: center;
-    overflow: scroll;
-    background-color: beige;
-}
-.categoryItem {
-    width: 200px;
-    height: 150px;
+    overflow-x: auto; /* فعال کردن اسکرول افقی */
+    white-space: nowrap; /* جلوگیری از شکستن آیتم‌ها به خطوط دیگر */
+    padding: 10px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  
+  .categoryItem {
+    display: flex;
+    flex-direction: column; /* تنظیم جهت چیدمان flex به صورت عمودی */
+    justify-content: flex-end; /* انتقال محتوای داخلی به پایین */
+    align-items: center; /* تنظیم محتوا در مرکز به صورت افقی */
+    flex: 0 0 200px; /* جلوگیری از کوچک شدن آیتم‌ها و تنظیم عرض ثابت */
+    height: 200px; /* ارتفاع ثابت */
+    margin-right: 30px;
+    background-color: #40f8ec34;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 30px; /* فاصله دادن محتوا از لبه‌ها */
+    transition: background-color 0.3s ease;
+    text-align: center;
+    
+  }
+  
+  .categoryItem:hover {
+    /* background-color: #ddd; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  
+  .categoryItem h5 {
+    margin: 0; /* حذف فاصله اضافی اطراف عنوان */
+    padding: 0;
+  }
+  
+  
+  
+
+.search{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 0 1 auto; 
-    flex-shrink:inherit;
-    flex-grow: 25px;
+    margin: 30px 0px;
+}
+.searchInput{
+    width: 450px;
+    height: 40px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    padding: 10px;
+    margin: 5px;
+    color: rgba(5, 5, 37, 0.555);
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.searchButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: none;
+    background-color: inherit;
+    font-size: 27px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    color: rgba(0, 0, 0, 0.614);
 }
