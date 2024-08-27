@@ -3,6 +3,8 @@ from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from . import validators
+
 
 class SiteSettings(models.Model):
     title = models.CharField(_('Title'), max_length=128, default=_('Plus You'))
@@ -42,8 +44,8 @@ class Category(models.Model):
                              help_text=_('Enter menu category title in Persian here'))
     en_title = models.CharField(_('English Title'), max_length=64, null=True, blank=True,
                                 help_text=_('Enter menu category title in English here (Optional)'))
-    icon = models.ImageField(_('Icon'), upload_to='images/category', default='images/category/default.jpg', null=True,
-                             blank=True)
+    icon =  models.FileField(_('Icon'), upload_to='images/category', default='images/category/default.jpg', null=True,
+                             blank=True, validators=[validators.icon_validator])
     is_active = models.BooleanField(_('Active / Disable'), default=True)
 
     class Meta:
