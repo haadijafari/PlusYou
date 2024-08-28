@@ -1,26 +1,28 @@
 
-.rules{
-    display: flex;
-    margin: 20px;
-    
+.website{
+  background-color: var(--backgroun-site);
 }
 .categoryMenu{
     display: flex;
-    background-color: #f7fbfc;
+    background-color: var(--primary-color);
     flex-wrap: wrap;
 
 }
 .title{
     display: flex;
+    color: #ddd;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin: 30px 0px;
+    text-shadow: 0px 5px 5px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
 }
 
 .categoryBox {
     display: flex;
-    overflow-x: auto; /* فعال کردن اسکرول افقی */
-    white-space: nowrap; /* جلوگیری از شکستن آیتم‌ها به خطوط دیگر */
+    overflow-x: auto;
+    white-space: nowrap;
     padding: 10px;
     overflow: auto;
     scrollbar-width: none;
@@ -28,28 +30,33 @@
   
   .categoryItem {
     display: flex;
-    flex-direction: column; /* تنظیم جهت چیدمان flex به صورت عمودی */
-    justify-content: flex-end; /* انتقال محتوای داخلی به پایین */
-    align-items: center; /* تنظیم محتوا در مرکز به صورت افقی */
-    flex: 0 0 200px; /* جلوگیری از کوچک شدن آیتم‌ها و تنظیم عرض ثابت */
-    height: 200px; /* ارتفاع ثابت */
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 0 200px;
+    height: 170px;
+    width: 150px;
     margin-right: 30px;
-    background-color: #40f8ec34;
+    background-color: var(--background-category);
     border-radius: 5px;
     cursor: pointer;
-    padding: 30px; /* فاصله دادن محتوا از لبه‌ها */
+    padding: 30px;
     transition: background-color 0.3s ease;
     text-align: center;
-    
-  }
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+}
   
   .categoryItem:hover {
     /* background-color: #ddd; */
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: var(--boxshadow) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color:var(--background-category-hover) ;
   }
   
   .categoryItem h5 {
-    margin: 0; /* حذف فاصله اضافی اطراف عنوان */
+    margin: 0; 
     padding: 0;
   }
   
@@ -74,7 +81,7 @@
     margin: 5px;
     color: rgba(5, 5, 37, 0.555);
     border: none;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    box-shadow: #a69d9d 0px 4px 12px;
 }
 .searchButton{
     display: flex;
@@ -88,8 +95,14 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     border: none;
-    background-color: inherit;
+    background-color: #ddd;
     font-size: 27px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     color: rgba(0, 0, 0, 0.614);
+}
+.icon{
+  margin-bottom: 15px;
+  color: #ddd;
+  width: 70px;
+  height: 70px;
 }

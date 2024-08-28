@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 30px;
-  background-color: #ffffff;
+  background-color: var(--background-navbar);
   border-bottom: 1px solid #5f695f;
   height: 9vh;
 }
@@ -26,6 +26,8 @@
   text-align: center;
   flex-grow: 1; /* اشغال فضای موجود برای قرارگیری در مرکز */
   font-size: 24px;
+  color: #fff;
+  font-weight: 700;
 }
 
 .footer{
@@ -39,5 +41,6 @@
   justify-content: center;
   align-items: center;
   color:#000000;
+  background-color: var(--background-footer);
 }
   

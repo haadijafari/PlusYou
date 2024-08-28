@@ -1,1 +1,14 @@
-
+:root {
+    --backgroun-site: #1c100d;
+    --background-card: #a2792f;
+    --background-navbar: #774e26;
+    --background-footer: #60371c;
+    --background-card3: #925e2d;
+    --background-category: #fcffa3;
+    --background-category-hover: #c0c37b;
+    --border-color: #FFD54F;
+    --boxshadow: #FFD54F;
+}
+.Bdiv{
+    background-color: var(--backgroun-site);
+}

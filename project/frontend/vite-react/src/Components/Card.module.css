@@ -1,0 +1,12 @@
+.rules{
+    display: flex;
+    margin: 20px;
+}
+.cards{
+    background-color: var(--background-card) !important;
+    max-width: auto !important;
+    min-width: 330px !important;
+    max-height: auto !important;
+    min-height: 180px !important;
+    margin-top: 10px !important;
+}

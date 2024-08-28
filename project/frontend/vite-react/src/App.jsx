@@ -18,8 +18,7 @@ function App() {
     document.documentElement.setAttribute('dir', 'rtl');
   }, []);
   return (
-    <> 
-    
+    <div className="Bdiv"> 
       <BrowserRouter>
       <Layout>
       <Routes>
@@ -27,12 +26,10 @@ function App() {
       <Route path='/menu' element={<CoffeeShop />} />
       <Route path='/aboutUs' element={<AboutUs />} />
       <Route path='/introduction' element={<Introduction />} />
-      {/* <Route path='/rules' element={<Rules />} /> */}
-      {/* <Route path='/complaint' element={<Complaint />}/> */}
       </Routes>
       </Layout>
       </BrowserRouter>
-    </>
+    </div>
   )
 }
 

@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import api from "../services/config";
 import styles from "./CoffeeShop.module.css";
@@ -74,7 +73,7 @@ function Rules() {
   };
 
   return (
-    <div>
+    <div className={styles.website}>
       {isLoading && <Loader />}
       <div className={styles.search}>
         <button className={styles.searchButton} onClick={searchHandler}><IoMdSearch /></button>
@@ -94,6 +93,7 @@ function Rules() {
             className={styles.categoryItem}
             onClick={() => handleCategoryClick(category.id)}
           >
+            <img src={category.icon} className={styles.icon} />
             {category.title}
           </div>
         ))}
@@ -113,20 +113,22 @@ function Rules() {
         )}
         
         {categories.map((category) => (
-          <div
-            key={category.id}
-            ref={(el) => (categoryRefs.current[category.id] = el)}
-            style={{ marginBottom: '20px', padding: '10px' }}
-          >
-            <h2 className={styles.title}>{category.title}</h2>
-            <div>
-              <div className={styles.categoryMenu}>
-                {(!hasSearched || searchResults.length > 0) && categoryItems[category.id]?.map((item) => (
-                    <div key={item.id}><Card  data={item}/></div>
-                )) || <p>محصولی یافت نشد</p>}
+          categoryItems[category.id]?.length > 0 && (
+            <div
+              key={category.id}
+              ref={(el) => (categoryRefs.current[category.id] = el)}
+              style={{ marginBottom: '20px', padding: '10px' }}
+            >
+              <h2 className={styles.title}>{category.title}</h2>
+              <div>
+                <div className={styles.categoryMenu}>
+                  {categoryItems[category.id]?.map((item) => (
+                      <div key={item.id}><Card  data={item}/></div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          )
         ))}
       </div>
     </div>
