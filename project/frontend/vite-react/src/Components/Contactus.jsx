@@ -34,14 +34,13 @@ function Contactus() {
   };
   return (
     <div className={styles.container}>
-      <div >
+      <div className={styles.btnbox}>
         <button className={`${styles.buttons}`} onClick={() => copyText('https://example.com')}>
-        Website<FiLink /></button>
+        Website<FiLink className={styles.icon}/></button>
         <button className={`${styles.buttons}`} onClick={() => window.location.href = `https://t.me/${inf.telegram}`}>
-         Telegram<FaTelegram /></button>
+         Telegram<FaTelegram className={styles.icon}/></button>
         <button className={`${styles.buttons}`} onClick={() => window.location.href = `https://www.instagram.com/${inf.instagram}`}>
-        Instagram<AiFillInstagram /></button>
-        
+        Instagram<AiFillInstagram className={styles.icon}/></button>
       </div>
     </div>
   )

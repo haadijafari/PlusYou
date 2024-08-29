@@ -41,9 +41,9 @@ function Layout({children}) {
         
       <div className={styles.aboutUs}>
         <div className={styles.info}>
-         <p><IoLocationSharp className={styles.icon}/> آدرس: {information.address}</p>
-         <p><FaPhoneAlt className={styles.icon}/> شماره تماس: {information.phone}</p>
-         <p><MdWatchLater className={styles.icon}/> ساعات کاری: {information.opening_closing}</p>
+         <p className={styles.text}><IoLocationSharp className={styles.icon}/> آدرس: {information.address}</p>
+         <p className={styles.text}><FaPhoneAlt className={styles.icon}/> شماره تماس: {information.phone}</p>
+         <p className={styles.text}><MdWatchLater className={styles.icon}/> ساعات کاری: {information.opening_closing}</p>
         </div>
       </div>
       <div className={styles.map}>

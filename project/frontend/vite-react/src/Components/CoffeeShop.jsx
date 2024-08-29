@@ -99,7 +99,7 @@ function Rules() {
         ))}
       </div>
       
-      <div>
+      <div className={styles.site}>
         {hasSearched && searchResults.length > 0 && (
           <div>       
             {searchResults.map(item => (

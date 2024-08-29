@@ -1,4 +1,4 @@
-.rules{
+/* .rules{
     display: flex;
     margin: 20px;
 }
@@ -9,4 +9,127 @@
     max-height: auto !important;
     min-height: 180px !important;
     margin-top: 10px !important;
+} */
+/* .container{
+  border: 1px solid #dee2e6; 
+  border-radius: 0.375rem; 
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  min-width: 330px;
+  min-height: 180px ;
+  max-width: auto;
+  max-height: auto;
+  margin-top: 10px;
+} */
+/* .card{
+  display: flex;
+  grid-column: ;
+
 }
+.img{
+  width: 50px;
+  height: 50px;
+}  */
+/* ---------------------------------------------------- */
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 10px; 
+}
+.card:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+
+.card {
+  display: flex;
+  border: 1px solid #dee2e6;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  max-width: 350px;
+  min-height: 180px;
+  overflow: hidden;
+  align-items: center;
+  background-color: var(--background-card);
+  -webkit-border-radius: 1.5rem;
+  -moz-border-radius: 1.5rem;
+  -ms-border-radius: 1.5rem;
+  -o-border-radius: 1.5rem;
+}
+
+
+.img {
+  flex: 1; 
+  margin-right: 10px; 
+  padding: 10px;
+}
+
+.img img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+
+.info {
+  flex: 2; 
+  padding: 20px; 
+}
+
+
+.title {
+  font-size: 1rem; 
+  margin-bottom: 0.75rem; 
+  color: #000000;
+  font-size: 1.3rem;
+}
+
+
+.description {
+  color: #484444;
+  font-size: 0.9rem; 
+  margin-bottom: 0.5rem; 
+}
+
+
+.price {
+  font-size: 0.7rem;
+  color: #484444;
+  background-color: #80ff009c;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+
+} 
+
+ @media(max-width: 1188px){
+   .card{
+    min-width: 450px;
+   }
+   .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+}
+@media(max-width: 1000px){
+  .card{
+    min-width: 350px;
+  }
+}
+@media(max-width: 800px){
+  .card{
+    min-width: 470px;
+  }
+}
+/* @media (min-width: 320px) and (max-width: 680px) {
+  .card{
+    min-width: 470px;
+  }
+} */
+
+

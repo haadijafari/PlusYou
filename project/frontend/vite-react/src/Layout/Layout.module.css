@@ -24,7 +24,7 @@
 .title {
   margin: 0;
   text-align: center;
-  flex-grow: 1; /* اشغال فضای موجود برای قرارگیری در مرکز */
+  flex-grow: 1; 
   font-size: 24px;
   color: #fff;
   font-weight: 700;
@@ -34,13 +34,13 @@
   display:flex;
   width: 100%;
   height: auto;
+  padding: 30px;
   bottom: 0;
   left: 0;
   background-color: #fff;
   border-top: 1px solid #5f695f;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  color:#000000;
   background-color: var(--background-footer);
 }
 
@@ -52,12 +52,34 @@
 
 }
 .info{
- line-height: 50px;
+ line-height: 30px;
  margin: 5% 0px;
  color: #fff;
+ margin-left: 10px;
+ flex-wrap: nowrap;
 }
 .icon{
   font-size: 24px;
   color: rgb(236, 29, 29);
   margin-left: 10px ;
+}
+.text{
+  font-size: 20px;
+}
+@media(max-width: 1000px){
+  .text{
+    font-size: 15px;
+  }
+  .icon{
+    font-size: 18px;
+  }
+}
+
+@media(max-width: 800px){
+  .text{
+    font-size: 10px;
+  }
+  .icon{
+    font-size: 16px;
+  }
 }

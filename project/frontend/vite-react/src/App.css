@@ -3,13 +3,14 @@
     --background-card: #F8F4E1;
     --background-navbar: #3F2305;
     --background-footer: #3F2305;
-    --background-card3: #925e2d;
+    /* --background-card1: #925e2d; */
     --background-category: #E1C78F;
-    --background-category-hover: #F3CF7A;
+    --background-category-hover: #A79277;
     --border-color: #FFD54F;
-    --boxshadow: #FFD54F;
+    --boxshadow: #A9907E;
     --contactus-button: #FFF2D8;
     --background-contactbuttons: #E4C59E;
+    --border-abooutus-btn: #FFD54F;
 }
 .Bdiv{
     background-color: var(--backgroun-site);
