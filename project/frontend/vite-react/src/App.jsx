@@ -6,10 +6,7 @@ import 'vite/modulepreload-polyfill'
 
 import CoffeeShop from './Components/CoffeeShop'
 import Layout from './Layout/Layout'
-import AboutUs from './Pages/AboutUs'
-import Introduction from './Pages/Introduction'
-// import Rules from './Pages/Rules'
-// import Complaint from './Pages/Complaint'
+import Contactus from './Components/Contactus'
 
 function App() {
   
@@ -24,9 +21,8 @@ function App() {
       <Routes>
       <Route index element={<Navigate to="/menu" replace />} />
       <Route path='/menu' element={<CoffeeShop />} />
-      <Route path='/aboutUs' element={<AboutUs />} />
-      <Route path='/introduction' element={<Introduction />} />
       </Routes>
+      <Contactus />
       </Layout>
       </BrowserRouter>
     </div>

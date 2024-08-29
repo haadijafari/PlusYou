@@ -1,13 +1,15 @@
 :root {
-    --backgroun-site: #1c100d;
-    --background-card: #a2792f;
-    --background-navbar: #774e26;
-    --background-footer: #60371c;
+    --backgroun-site: #AF8F6F;
+    --background-card: #F8F4E1;
+    --background-navbar: #3F2305;
+    --background-footer: #3F2305;
     --background-card3: #925e2d;
-    --background-category: #fcffa3;
-    --background-category-hover: #c0c37b;
+    --background-category: #E1C78F;
+    --background-category-hover: #F3CF7A;
     --border-color: #FFD54F;
     --boxshadow: #FFD54F;
+    --contactus-button: #FFF2D8;
+    --background-contactbuttons: #E4C59E;
 }
 .Bdiv{
     background-color: var(--backgroun-site);
