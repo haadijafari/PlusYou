@@ -16,15 +16,10 @@ function App() {
   }, []);
   return (
     <div className="Bdiv"> 
-      <BrowserRouter>
       <Layout>
-      <Routes>
-      <Route index element={<Navigate to="/menu" replace />} />
-      <Route path='/menu' element={<CoffeeShop />} />
-      </Routes>
+      <CoffeeShop />
       <Contactus />
       </Layout>
-      </BrowserRouter>
     </div>
   )
 }

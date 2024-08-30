@@ -3,10 +3,10 @@
     height: 400px;
   }
   
-  @media (max-width: 800px) {
-    .responsiveMap {
-      width: 270px;
-      height: 270px;
+@media (max-width: 800px) {
+   .responsiveMap {
+    width: 270px;
+    height: 270px;
     }
-  }
+}
   

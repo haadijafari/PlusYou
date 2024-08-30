@@ -50,6 +50,9 @@ function Layout({children}) {
       <Modal data={information}/>
       </div>
       </footer>
+      <div className={styles.author}>
+        <p className={styles.authors}>Made By Maryam Mirafzal & Hadi Jafari</p>
+      </div>
     </div>
   )
 }

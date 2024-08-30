@@ -5,12 +5,15 @@
     --background-footer: #3F2305;
     /* --background-card1: #925e2d; */
     --background-category: #E1C78F;
-    --background-category-hover: #A79277;
+    --background-category-hover: #3F2305;
     --border-color: #FFD54F;
     --boxshadow: #A9907E;
     --contactus-button: #FFF2D8;
     --background-contactbuttons: #E4C59E;
     --border-abooutus-btn: #FFD54F;
+    --background-btn-contactus: #3F2305;
+    --background-author:#113946;
+    --background-searchNotFind: #FFF2D8;
 }
 .Bdiv{
     background-color: var(--backgroun-site);
