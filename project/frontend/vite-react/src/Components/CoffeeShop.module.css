@@ -159,26 +159,26 @@
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
-    padding: 10px 20px; /* فاصله‌ی بیشتری ایجاد کنید */
+    padding: 10px 20px; 
     scrollbar-width: thin; 
     scrollbar-color: #3F2305 #FFF2D8;
-    margin-bottom: 10px; /* فاصله از پایین، اگر لازم است */
+    margin-bottom: 10px;
   }
   
-  /* برای مرورگرهایی که از ::-webkit-scrollbar پشتیبانی می‌کنند */
+
   .categoryBox::-webkit-scrollbar {
     height: 8px;
   }
   
   .categoryBox::-webkit-scrollbar-track {
     background: #FFF2D8;
-    margin: 10px; /* فاصله ایجاد می‌کند */
+    margin: 10px;
   }
   
   .categoryBox::-webkit-scrollbar-thumb {
     background-color: #3F2305; 
     border-radius: 10px;
-    border: 2px solid #FFF2D8; /* فاصله بین اسکرول‌بار و محتوا */
+    border: 2px solid #FFF2D8; 
   }
   
   .categoryItem {

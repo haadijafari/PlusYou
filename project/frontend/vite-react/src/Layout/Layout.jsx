@@ -4,7 +4,6 @@ import Modal from "../Components/Modal"
 
 
 import styles from "./Layout.module.css"
-// import Navbar from '../Components/Navbar'
 
 import { IoLocationSharp } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
