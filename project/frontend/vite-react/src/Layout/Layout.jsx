@@ -10,6 +10,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { MdWatchLater } from "react-icons/md";
 import api from "../services/config";
 
+
 function Layout({children}) {
 
   const [ information, setInformation ] = useState([])
@@ -35,7 +36,6 @@ function Layout({children}) {
       {children}
 
       <footer className={styles.footer}>
-        
       <div className={styles.aboutUs}>
         <div className={styles.info}>
          <p className={styles.text}><IoLocationSharp className={styles.icon}/> آدرس: {information.address}</p>
