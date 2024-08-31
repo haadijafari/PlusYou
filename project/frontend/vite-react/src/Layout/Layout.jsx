@@ -28,9 +28,7 @@ function Layout({children}) {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-      <div className={styles.navAndSearch}>
-        {/* <Navbar /> */}
-      </div>
+      
       <h3 className={styles.title}>Plus You</h3>
     </header>
 
@@ -50,8 +48,15 @@ function Layout({children}) {
       </div>
       </footer>
       <div className={styles.author}>
-        <p className={styles.authors}>Made By Maryam Mirafzal & Hadi Jafari</p>
-      </div>
+         <span className={styles.authors}>
+           <a href="https://github.com/MaryamMirafzal" target="_blank" rel="noopener noreferrer">Mirafzal</a>
+           <span>&</span>
+           <a href="https://github.com/haadijafari" target="_blank" rel="noopener noreferrer">Jafari</a>
+         </span>
+           <p className={styles.txt}>
+            تمامی حقوق محفوظ است  {new Date().getFullYear()} Copyright &copy;
+           </p>
+        </div>
     </div>
   )
 }

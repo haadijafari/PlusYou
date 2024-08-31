@@ -77,7 +77,6 @@ function Rules() {
       categoryRefs.current[id].scrollIntoView({ behavior: "smooth" });
     }
   };
-
   return (
     <div className={styles.website}>
       {isLoading && <Loader />}

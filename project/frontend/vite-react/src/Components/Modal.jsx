@@ -29,7 +29,6 @@ const MyMap = ({ data }) => {
       zoom={15} 
       scrollWheelZoom={false} 
       className={styles.responsiveMap}
-      // style={{ height: "400px", width: "400px" }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

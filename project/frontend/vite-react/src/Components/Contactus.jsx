@@ -7,6 +7,8 @@ import { AiFillInstagram } from 'react-icons/ai'
 import { FaTelegram } from 'react-icons/fa'
 import { FiLink } from "react-icons/fi";
 
+const Wave = "./static/assets/Wave.svg"
+
 function Contactus() {
 
   const [ inf , setInf ] = useState([])
@@ -33,6 +35,10 @@ function Contactus() {
       });
   };
   return (
+    <>
+    <div className={styles.Separator}>
+        <img src={Wave} alt="separator" />
+      </div>
     <div className={styles.container}>
       <div className={styles.btnbox}>
         <button className={`${styles.buttons}`} onClick={() => copyText('https://example.com')}>
@@ -43,6 +49,7 @@ function Contactus() {
         Instagram<AiFillInstagram className={styles.icon}/></button>
       </div>
     </div>
+    </>
   )
 }
 

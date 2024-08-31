@@ -7,12 +7,9 @@
   border-bottom: 1px solid #5f695f;
   height: 9vh;
 }
- 
-.navAndSearch {
-  display: flex;
-  align-items: center; 
+.header h3{
+  font-family: "Noto Sans Arabic" ;
 }
-  
 .searchButton {
   background-color: transparent;
   border: none;
@@ -36,6 +33,7 @@
 }
 
 .footer{
+  position:relative;
   display:flex;
   width: 100%;
   height: auto;
@@ -46,7 +44,23 @@
   border-top: 1px solid #5f695f;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--background-footer);
+  background: url("http://127.0.0.1:8000/static/assets/coffeeFooter.jpg") center ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.523); 
+  z-index: 1; 
+}
+.footer > * {
+  position: relative;
+  z-index: 2; 
 }
 
 .cart{
@@ -71,17 +85,41 @@
 .text{
   font-size: 20px;
 }
-.author{
+.author {
   display: flex;
-  align-items: center;
+  align-items: center; 
   justify-content: center;
-  color: #fff;
-  background-color: var(--background-author);
-}
-.authors{
-  padding-top: 9px;
+  padding:0 15%; 
   font-size: 14px;
+  background-color: #333;
+  color: #fff;
+  height: 30px; 
+  direction: rtl; 
 }
+
+.authors {
+  display: flex;
+  align-items: center; 
+  margin-left: auto; 
+}
+
+.authors a {
+  color: #fff;
+  text-decoration: none;
+  margin: 10px; 
+  font-family: "Noto Sans Arabic" ;
+}
+.authors span{
+  padding-bottom: 10px;
+}
+.txt {
+  margin-right: 20px; 
+  font-size: 12px;
+  font-family: "Noto Sans Arabic" ;
+  padding-top: 10px;
+}
+
+
 @media(max-width: 1000px){
   .text{
     font-size: 15px;
@@ -109,5 +147,33 @@
   }
   .icon{
     font-size: 20px;
+  }
+}
+@media(max-width: 560px){
+  .author{
+    padding: 0 10%;
+  } 
+}
+@media(max-width: 560px){
+  .author{
+    padding: 0 5%;
+    font-size: 10px;
+
+  } 
+}
+@media(max-width: 405px){
+  .author{
+    padding: 0 1%;
+    font-size: 10px;
+
+  } 
+}
+@media(max-width: 372px){
+  .author{
+    padding: 0 3px;
+    font-size: 7px;
+  } 
+  .authors span{
+    padding-bottom: 5px;
   }
 }

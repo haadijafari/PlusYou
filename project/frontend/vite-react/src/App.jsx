@@ -1,5 +1,4 @@
 import './App.css'
-import { Navigate, Route, Routes ,BrowserRouter} from 'react-router-dom'
 import React from 'react'
 import 'vite/modulepreload-polyfill'
 

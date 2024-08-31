@@ -1,5 +1,5 @@
 .responsiveMap {
-    width: 400px;
+    width: 600px;
     height: 400px;
   }
   
@@ -9,4 +9,21 @@
     height: 270px;
     }
 }
-  
+@media (max-width: 1350px) {
+  .responsiveMap {
+   width: 500px;
+   height: 400px;
+   }
+}
+@media (max-width: 1100px) {
+  .responsiveMap {
+   width: 400px;
+   height: 400px;
+   }
+}
+@media (max-width: 900px) {
+  .responsiveMap {
+   width: 300px;
+   height: 300px;
+   }
+}
