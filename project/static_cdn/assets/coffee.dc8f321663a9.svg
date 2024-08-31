@@ -1,0 +1,12 @@
+<svg width="200" height="200" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- لیوان قهوه -->
+  <rect x="16" y="32" width="32" height="16" rx="4" fill="#6F4F28" stroke="#5D3A1A"/>
+  <rect x="20" y="32" width="24" height="2" rx="1" fill="#8B5E3C"/>
+  <!-- بخار -->
+  <path d="M28 20c0-4 4-8 4-8s4 4 4 8" fill="none" stroke="#8B8B8B"/>
+  <path d="M32 16c0-2 2-4 2-4s2 2 2 4" fill="none" stroke="#8B8B8B"/>
+  <path d="M36 12c0-1 1-2 1-2s1 1 1 2" fill="none" stroke="#8B8B8B"/>
+</svg>
+
+
+

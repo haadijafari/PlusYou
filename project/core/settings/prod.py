@@ -1,8 +1,8 @@
 from .base import *
 
-ALLOWED_HOSTS = [
-    'https://example.com',
-]
+# ALLOWED_HOSTS = [
+#     'https://example.com',
+# ]
 
 ALLOWED_HOSTS = [
     'haadijafari.ir',
@@ -43,12 +43,6 @@ DATABASES = {
     }
 }
 
-# reCaptcha
-RECAPTCHA_PUBLIC_KEY = os.environ['RECAPTCHA_PUBLIC_KEY_V2']
-RECAPTCHA_PRIVATE_KEY = os.environ['RECAPTCHA_PRIVATE_KEY_V2']
-# RECAPTCHA_DOMAIN = 'www.recaptcha.net'
-RECAPTCHA_REQUIRED_SCORE = 0.75
-
 # STATIC_ROOT = '/home/[USER]/public_html/static'
 # MEDIA_ROOT = '/home/[USER]/public_html/media'
 STATIC_ROOT = BASE_DIR / "static_cdn"
@@ -57,8 +51,17 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    BASE_DIR / "media",
-    BASE_DIR / "frontend/vite-react/public",
     BASE_DIR / "frontend/vite-react/dist",
 ]
+
+# CSP Policies
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_STYLE_SRC = ("'self'", "https://fonts.googleapis.com")
+CSP_FONT_SRC = ("'self'", "https://fonts.gstatic.com")
+CSP_IMG_SRC = (
+    "'self'",
+    "https://a.tile.openstreetmap.org",
+    "https://b.tile.openstreetmap.org",
+    "https://c.tile.openstreetmap.org",
+    "https://cdnjs.cloudflare.com",
+)
