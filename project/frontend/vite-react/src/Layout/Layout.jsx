@@ -54,7 +54,7 @@ function Layout({children}) {
            <a href="https://github.com/haadijafari" target="_blank" rel="noopener noreferrer">Jafari</a>
          </span>
            <p className={styles.txt}>
-            تمامی حقوق محفوظ است  {new Date().getFullYear()} Copyright &copy;
+           تمامی حقوق برای کافه پلاس یو محفوض است  {new Date().getFullYear()} Copyright &copy;
            </p>
         </div>
     </div>
