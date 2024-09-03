@@ -51,7 +51,7 @@ function Layout({children}) {
          <span className={styles.authors}>
            <a href="https://github.com/MaryamMirafzal" target="_blank" rel="noopener noreferrer">Mirafzal</a>
            <span>&</span>
-           <a href="https://github.com/haadijafari" target="_blank" rel="noopener noreferrer">Jafari</a>
+           <a href="https://hadijafari.info" target="_blank" rel="noopener noreferrer">Jafari</a>
          </span>
            <p className={styles.txt}>
            تمامی حقوق برای کافه پلاس یو محفوض است  {new Date().getFullYear()} Copyright &copy;
