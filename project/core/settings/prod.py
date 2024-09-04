@@ -36,7 +36,7 @@ DATABASES = {
 #     }
 # }
 
-STATIC_ROOT = '/home/plusyouipublic_html/static'
+STATIC_ROOT = '/home/plusyoui/public_html/static'
 MEDIA_ROOT = '/home/plusyoui/public_html/media'
 # STATIC_ROOT = BASE_DIR / "static_cdn"
 # MEDIA_ROOT = BASE_DIR / "media_cdn"
