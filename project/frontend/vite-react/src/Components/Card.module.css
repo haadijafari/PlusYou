@@ -15,6 +15,7 @@
   border-radius: 1.5rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   max-width: 345px;
+  min-width: 345px;
   min-height: 190px;
   max-height: 190px;
   overflow: hidden;

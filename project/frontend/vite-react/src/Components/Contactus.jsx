@@ -41,7 +41,7 @@ function Contactus() {
       </div>
     <div className={styles.container}>
       <div className={styles.btnbox}>
-        <button className={`${styles.buttons}`} onClick={() => copyText('https://example.com')}>
+        <button className={`${styles.buttons}`} onClick={() => copyText('https://Plus-you.ir')}>
         Website<FiLink className={styles.icon}/></button>
         <button className={`${styles.buttons}`} onClick={() => window.location.href = `https://t.me/${inf.telegram}`}>
          Telegram<FaTelegram className={styles.icon}/></button>
