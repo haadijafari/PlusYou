@@ -14,8 +14,8 @@
     --background-author:#113946;
     --background-searchNotFind: #FFF2D8;
 
-    --wave-line-url: url("http://127.0.0.1:8000/static/assets/waveLine.svg");
-    --footer-background: url("http://127.0.0.1:8000/static/assets/plusyoucafe.jpg");
+    --wave-line-url: url("https://plus-you.ir/static/assets/waveLine.svg");
+    --footer-background: url("https://plus-you.ir/static/assets/plusyoucafe.jpg");
 }
 .Bdiv{
     background-color: var(--backgroun-site);
