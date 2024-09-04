@@ -26,6 +26,8 @@ DATABASES = {
         'PORT': '3306',
         'OPTIONS': {
             'sql_mode': 'traditional',
+            'charset': 'utf8mb4',  # Add this line to support Persian and Arabic characters
+            'init_command': "SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'",  # Ensure connection uses utf8mb4
         }
     }
 }
