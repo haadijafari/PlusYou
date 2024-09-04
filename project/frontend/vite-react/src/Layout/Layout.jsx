@@ -30,12 +30,12 @@ function Layout({children}) {
     <div className={styles.container}>
       <header className={styles.header}>
       
-      <h3 className={styles.title}>Plus You</h3>
+      <h1 className={styles.title}>{information.title}</h1>
     </header>
 
       {children}
 
-      <footer className={styles.footer}>
+      <footer className={styles.footer} >
       <div className={styles.aboutUs}>
         <div className={styles.info}>
          <p className={styles.text}><IoLocationSharp className={styles.icon}/> آدرس: {information.address}</p>

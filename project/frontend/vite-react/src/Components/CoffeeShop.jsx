@@ -124,7 +124,9 @@ function Rules() {
               ref={(el) => (categoryRefs.current[category.id] = el)}
               style={{ marginBottom: '20px', padding: '10px' }}
             >
-              <h2 className={styles.title}>{category.title}</h2>
+              <h2 className={styles.title} >
+                {category.title}
+                </h2>
               <div>
                 <div className={styles.categoryMenu}>
                   {categoryItems[category.id]?.map((item) => (

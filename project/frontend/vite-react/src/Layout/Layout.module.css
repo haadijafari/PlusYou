@@ -7,7 +7,7 @@
   border-bottom: 1px solid #5f695f;
   height: 9vh;
 }
-.header h3{
+.header h1{
   font-family: "Noto Sans Arabic" ;
 }
 .searchButton {
@@ -45,7 +45,8 @@
   border-top: 1px solid #5f695f;
   justify-content: space-around;
   align-items: center;
-  background: url("http://127.0.0.1:8000/static/assets/plusyoucafe.jpg") center ;
+  background:  var(--footer-background) ;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }

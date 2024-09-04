@@ -34,7 +34,8 @@
   position: absolute;
   width: 100%;
   height: 20px; 
-  background: url("http://127.0.0.1:8000/static/assets/waveLine.svg") center;
+  background: var(--wave-line-url) ;
+  background-position: center;
   background-size: contain;
   z-index: -1; 
   display: flex;
