@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - production
+      - main
 name: 🚀 Deploy plus-you.ir on push
 jobs:
   web-deploy:
